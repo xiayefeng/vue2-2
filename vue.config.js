@@ -5,7 +5,7 @@ module.exports = defineConfig({
   publicPath: '/',
   configureWebpack: {
     plugins: [
-     /*  new ModuleFederationPlugin({
+      new ModuleFederationPlugin({
         name: 'app2',  // 当前APP作为remote暴露组件时的APP的名字
         library: {
           type: 'var',
@@ -22,7 +22,7 @@ module.exports = defineConfig({
         }, // 定义该库作为remote时，要暴露出去的组件。左边是相对路径和组件名字（其他库使用时候），右边是该组件在本库内的路径
         // shared: ["react", "react-dom","react-router-dom"]// 和引入的组件公用的dependency
         shared: require('./package.json').dependencies
-      }) */
+      })
     ]
   },
   chainWebpack: (config) => {
